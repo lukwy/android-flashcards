@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "w5b1serX1cJv2kwPKybCQiwqVpIXxufC1PCwIafRzcvPBhI+j1PSeOTkqG3gOHtM7RDnzSnDihcnUvgGXJmsVw==",
+  "success": true,
+  "projectFilePath": "C:\\Projects\\android-flashcards\\Flashcards\\Flashcards\\Flashcards.iOS\\Flashcards.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lukwy\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\lukwy\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\lukwy\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}
