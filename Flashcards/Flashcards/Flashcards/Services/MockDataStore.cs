@@ -14,12 +14,9 @@ namespace Flashcards.Services
         {
             items = new List<Item>()
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." }
+                new Item { Id = 1, Infinitive = "sove", Preteritum = "sov", Perfektum = "sovet", Meaning = "spać" },
+                new Item { Id = 2, Infinitive = "spise", Preteritum = "spiste", Perfektum = "sovet", Meaning = "jeść" },
+                new Item { Id = 3, Infinitive = "stige", Preteritum = "steg", Perfektum = "steget", Meaning = "spać" }
             };
         }
 
@@ -39,7 +36,7 @@ namespace Flashcards.Services
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> DeleteItemAsync(string id)
+        public async Task<bool> DeleteItemAsync(int id)
         {
             var oldItem = items.Where((Item arg) => arg.Id == id).FirstOrDefault();
             items.Remove(oldItem);
@@ -47,7 +44,7 @@ namespace Flashcards.Services
             return await Task.FromResult(true);
         }
 
-        public async Task<Item> GetItemAsync(string id)
+        public async Task<Item> GetItemAsync(int id)
         {
             return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
         }
@@ -55,6 +52,11 @@ namespace Flashcards.Services
         public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
+        }
+
+        public async Task<int> GetLastItemIdAsync()
+        {
+            return await Task.FromResult(items.LastOrDefault().Id);
         }
     }
 }

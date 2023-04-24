@@ -1,14 +1,5 @@
-﻿using Flashcards.Models;
-using Flashcards.ViewModels;
-using Flashcards.Views;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Flashcards.ViewModels;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace Flashcards.Views
 {

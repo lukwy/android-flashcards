@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Flashcards.Views.MainPage"
+             xmlns:vm="clr-namespace:Flashcards.ViewModels"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <vm:MainViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Style TargetType="Entry">
+                <Setter Property="FontSize" Value="25" />
+                <Setter Property="Margin" Value="5" />
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="25"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid Margin="10, 10, 10, 225">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Text="test" LineBreakMode="NoWrap"/>
+        <Entry Grid.Row="1"/>
+        <Entry Grid.Row="2"/>
+        <Entry Grid.Row="3"/>
+        <Button Grid.Row="4" Text="Sprawdź"/>
+    </Grid>
+
+</ContentPage>

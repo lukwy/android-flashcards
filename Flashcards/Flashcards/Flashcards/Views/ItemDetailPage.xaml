@@ -5,10 +5,17 @@
              Title="{Binding Title}">
 
     <StackLayout Spacing="20" Padding="15">
-        <Label Text="Text:" FontSize="Medium" />
-        <Label Text="{Binding Text}" FontSize="Small"/>
-        <Label Text="Description:" FontSize="Medium" />
-        <Label Text="{Binding Description}" FontSize="Small"/>
+        <Label Text="Infinitive:" FontSize="Medium" />
+        <Label Text="{Binding Infinitive}" FontSize="Small"/>
+        <Label Text="Preteritum:" FontSize="Medium" />
+        <Label Text="{Binding Preteritum}" FontSize="Small"/>
+        <Label Text="Perfektum:" FontSize="Medium" />
+        <Label Text="{Binding Perfektum}" FontSize="Small"/>
+        <Label Text="Znaczenie:" FontSize="Medium" />
+        <Label Text="{Binding Meaning}" FontSize="Small"/>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Usuń" Command="{Binding DeleteCommand}" HorizontalOptions="FillAndExpand"></Button>
+        </StackLayout>
     </StackLayout>
     
 </ContentPage>

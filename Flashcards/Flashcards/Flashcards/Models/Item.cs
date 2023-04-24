@@ -4,8 +4,10 @@ namespace Flashcards.Models
 {
     public class Item
     {
-        public string Id { get; set; }
-        public string Text { get; set; }
-        public string Description { get; set; }
+        public int Id { get; set; }
+        public string Infinitive { get; set; }
+        public string Preteritum { get; set; }
+        public string Perfektum { get; set; }
+        public string Meaning { get; set; }
     }
 }

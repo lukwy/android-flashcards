@@ -9,7 +9,7 @@ namespace Flashcards.ViewModels
     {
         public MainViewModel()
         {
-            Title = "About";
+            Title = "Fiszki";
             OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
         }
 

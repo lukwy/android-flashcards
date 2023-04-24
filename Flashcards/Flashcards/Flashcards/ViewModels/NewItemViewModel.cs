@@ -1,16 +1,14 @@
 ﻿using Flashcards.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace Flashcards.ViewModels
 {
     public class NewItemViewModel : BaseViewModel
     {
-        private string text;
-        private string description;
+        private string infinitive;
+        private string preteritum;
+        private string perfektum;
+        private string meaning;
 
         public NewItemViewModel()
         {
@@ -22,20 +20,34 @@ namespace Flashcards.ViewModels
 
         private bool ValidateSave()
         {
-            return !String.IsNullOrWhiteSpace(text)
-                && !String.IsNullOrWhiteSpace(description);
+            return !string.IsNullOrWhiteSpace(infinitive)
+                && !string.IsNullOrWhiteSpace(preteritum)
+                && !string.IsNullOrWhiteSpace(perfektum)
+                && !string.IsNullOrWhiteSpace(meaning);
         }
 
-        public string Text
+        public string Infinitive
         {
-            get => text;
-            set => SetProperty(ref text, value);
+            get => infinitive;
+            set => SetProperty(ref infinitive, value);
         }
 
-        public string Description
+        public string Preteritum
         {
-            get => description;
-            set => SetProperty(ref description, value);
+            get => preteritum;
+            set => SetProperty(ref preteritum, value);
+        }
+
+        public string Perfektum
+        {
+            get => perfektum;
+            set => SetProperty(ref perfektum, value);
+        }
+
+        public string Meaning
+        {
+            get => meaning;
+            set => SetProperty(ref meaning, value);
         }
 
         public Command SaveCommand { get; }
@@ -49,11 +61,15 @@ namespace Flashcards.ViewModels
 
         private async void OnSave()
         {
+            var lastId = await DataStore.GetLastItemIdAsync();
+
             Item newItem = new Item()
             {
-                Id = Guid.NewGuid().ToString(),
-                Text = Text,
-                Description = Description
+                Id = ++lastId,
+                Infinitive = Infinitive,
+                Preteritum = Preteritum,
+                Perfektum = Perfektum,
+                Meaning = Meaning
             };
 
             await DataStore.AddItemAsync(newItem);
