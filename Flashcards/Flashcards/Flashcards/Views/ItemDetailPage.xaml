@@ -5,12 +5,8 @@
              Title="{Binding Title}">
 
     <StackLayout Spacing="20" Padding="15">
-        <Label Text="Infinitive:" FontSize="Medium" />
-        <Label Text="{Binding Infinitive}" FontSize="Small"/>
-        <Label Text="Preteritum:" FontSize="Medium" />
-        <Label Text="{Binding Preteritum}" FontSize="Small"/>
-        <Label Text="Perfektum:" FontSize="Medium" />
-        <Label Text="{Binding Perfektum}" FontSize="Small"/>
+        <Label Text="Słowo:" FontSize="Medium" />
+        <Label Text="{Binding Word}" FontSize="Small"/>
         <Label Text="Znaczenie:" FontSize="Medium" />
         <Label Text="{Binding Meaning}" FontSize="Small"/>
         <StackLayout Orientation="Horizontal">

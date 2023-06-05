@@ -1,7 +1,4 @@
 ﻿using Flashcards.Views;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xamarin.Forms;
 
 namespace Flashcards.ViewModels

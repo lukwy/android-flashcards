@@ -1,13 +1,12 @@
 ﻿using Flashcards.Models;
+using System;
 using Xamarin.Forms;
 
 namespace Flashcards.ViewModels
 {
     public class NewItemViewModel : BaseViewModel
     {
-        private string infinitive;
-        private string preteritum;
-        private string perfektum;
+        private string word;
         private string meaning;
 
         public NewItemViewModel()
@@ -20,28 +19,14 @@ namespace Flashcards.ViewModels
 
         private bool ValidateSave()
         {
-            return !string.IsNullOrWhiteSpace(infinitive)
-                && !string.IsNullOrWhiteSpace(preteritum)
-                && !string.IsNullOrWhiteSpace(perfektum)
+            return !string.IsNullOrWhiteSpace(word)
                 && !string.IsNullOrWhiteSpace(meaning);
         }
 
-        public string Infinitive
+        public string Word
         {
-            get => infinitive;
-            set => SetProperty(ref infinitive, value);
-        }
-
-        public string Preteritum
-        {
-            get => preteritum;
-            set => SetProperty(ref preteritum, value);
-        }
-
-        public string Perfektum
-        {
-            get => perfektum;
-            set => SetProperty(ref perfektum, value);
+            get => word;
+            set => SetProperty(ref word, value);
         }
 
         public string Meaning
@@ -61,14 +46,10 @@ namespace Flashcards.ViewModels
 
         private async void OnSave()
         {
-            var lastId = await DataStore.GetLastItemIdAsync();
-
             Item newItem = new Item()
             {
-                Id = ++lastId,
-                Infinitive = Infinitive,
-                Preteritum = Preteritum,
-                Perfektum = Perfektum,
+                Guid = Guid.NewGuid().ToString(),
+                Word = Word,
                 Meaning = Meaning
             };
 

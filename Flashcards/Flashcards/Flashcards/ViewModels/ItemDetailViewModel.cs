@@ -4,16 +4,14 @@ using Xamarin.Forms;
 
 namespace Flashcards.ViewModels
 {
-    [QueryProperty(nameof(ItemId), nameof(ItemId))]
+    [QueryProperty(nameof(ItemGuid), nameof(ItemGuid))]
     public class ItemDetailViewModel : BaseViewModel
     {
-        private int itemId;
-        private string infinitive;
-        private string preteritum;
-        private string perfektum;
+        private string itemGuid;
+        private string word;
         private string meaning;
 
-        public int Id { get; set; }
+        public string Guid { get; set; }
 
         public ItemDetailViewModel()
         {
@@ -21,35 +19,31 @@ namespace Flashcards.ViewModels
             this.PropertyChanged += (_, __) => DeleteCommand.ChangeCanExecute();
         }
 
-        public int ItemId
+        public string ItemGuid
         {
             get
             {
-                return itemId;
+                return itemGuid;
             }
             set
             {
-                itemId = value;
+                itemGuid = value;
                 LoadItemId(value);
             }
         }
 
-        public string Infinitive { get => infinitive; set => SetProperty(ref infinitive, value); }
-        public string Preteritum { get => preteritum; set => SetProperty(ref preteritum, value); }
-        public string Perfektum { get => perfektum; set => SetProperty(ref perfektum, value); }
+        public string Word { get => word; set => SetProperty(ref word, value); }
         public string Meaning { get => meaning; set => SetProperty(ref meaning, value); }
         
         public Command DeleteCommand { get; }
 
-        public async void LoadItemId(int itemId)
+        public async void LoadItemId(string itemGuid)
         {
             try
             {
-                var item = await DataStore.GetItemAsync(itemId);
-                Id = item.Id;
-                Infinitive = item.Infinitive;
-                Preteritum = item.Preteritum;
-                Perfektum = item.Perfektum;
+                var item = await DataStore.GetItemAsync(itemGuid);
+                Guid = item.Guid;
+                Word = item.Word;
                 Meaning = item.Meaning;
             }
             catch (Exception)
@@ -60,7 +54,7 @@ namespace Flashcards.ViewModels
 
         private async void OnDelete()
         {
-            await DataStore.DeleteItemAsync(Id);
+            await DataStore.DeleteItemAsync(Guid);
 
             // This will pop the current page off the navigation stack
             await Shell.Current.GoToAsync("..");

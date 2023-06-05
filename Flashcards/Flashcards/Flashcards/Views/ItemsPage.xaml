@@ -21,16 +21,8 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Padding="10" x:DataType="model:Item">
-                        <Label Text="{Binding Infinitive}" 
+                        <Label Text="{Binding Word}" 
                             LineBreakMode="WordWrap"
-                            FontSize="13" />
-                        <Label Text="{Binding Preteritum}" 
-                            LineBreakMode="WordWrap"
-                            Style="{DynamicResource ListItemDetailTextStyle}"
-                            FontSize="13" />
-                        <Label Text="{Binding Perfektum}" 
-                            LineBreakMode="WordWrap"
-                            Style="{DynamicResource ListItemDetailTextStyle}"
                             FontSize="13" />
                         <Label Text="{Binding Meaning}" 
                             LineBreakMode="WordWrap"

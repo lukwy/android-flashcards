@@ -34,9 +34,7 @@
 
         <Label Grid.Row="0" Text="test" LineBreakMode="NoWrap"/>
         <Entry Grid.Row="1"/>
-        <Entry Grid.Row="2"/>
-        <Entry Grid.Row="3"/>
-        <Button Grid.Row="4" Text="Sprawdź"/>
+        <Button Grid.Row="2" Text="Sprawdź"/>
     </Grid>
 
 </ContentPage>
