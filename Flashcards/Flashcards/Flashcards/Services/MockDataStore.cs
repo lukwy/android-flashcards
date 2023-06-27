@@ -1,5 +1,4 @@
 ﻿using Flashcards.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -52,6 +51,16 @@ namespace Flashcards.Services
         public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
+        }
+
+        public async Task<int> GetItemsCountAsync()
+        { 
+            return await Task.FromResult(items.Count());
+        }
+
+        public async Task<Item> GetRandItemAsync(int shift)
+        { 
+            return await Task.FromResult(items[shift]);
         }
     }
 }

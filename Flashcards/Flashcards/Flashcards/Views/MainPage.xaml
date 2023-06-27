@@ -32,9 +32,10 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Text="test" LineBreakMode="NoWrap"/>
-        <Entry Grid.Row="1"/>
-        <Button Grid.Row="2" Text="Sprawdź"/>
+        <Label Grid.Row="0" Text="{Binding ItemMeaning}" LineBreakMode="NoWrap"/>
+        <Entry Grid.Row="1" Text="{Binding Answer, Mode=TwoWay}"/>
+        <Label Grid.Row="2" Text="{Binding CheckStatus, Mode=Default}" />
+        <Button Grid.Row="3" Command="{Binding CheckCommand}" Text="Sprawdź"/>
     </Grid>
 
 </ContentPage>
