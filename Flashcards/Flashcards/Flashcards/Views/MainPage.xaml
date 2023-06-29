@@ -32,10 +32,11 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Text="{Binding ItemMeaning}" LineBreakMode="NoWrap"/>
-        <Entry Grid.Row="1" Text="{Binding Answer, Mode=TwoWay}"/>
-        <Label Grid.Row="2" Text="{Binding CheckStatus, Mode=Default}" />
-        <Button Grid.Row="3" Command="{Binding CheckCommand}" Text="Sprawdź"/>
+        <Label Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding ItemMeaning}" LineBreakMode="NoWrap"/>
+        <Entry Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Answer, Mode=TwoWay}"/>
+        <Label Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="{Binding StatusColor}" Text="{Binding CheckStatus, Mode=Default}" />
+        <Button Grid.Row="3" Grid.Column="0" Command="{Binding CheckCommand}" Text="Sprawdź"/>
+        <Button Grid.Row="3" Grid.Column="1" Command="{Binding DrawCommand}" Text="Losuj"/>
     </Grid>
 
 </ContentPage>
